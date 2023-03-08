@@ -17,6 +17,14 @@ Relative Strength Index (RSI): a technical indicator that measures the strength 
 Average True Range (ATR): a technical indicator that measures volatility by taking into account any gaps in the price movement. ATR is used to calculate the ATR feature of the price data.
 Exponential Moving Average (EMA): a type of moving average that gives more weight to recent prices. EMA is used to calculate the EMA feature of the price data.
 
+The random forest classifier is used in the trading strategy to predict the direction of the next day's price movement based on a set of features calculated from historical price data. The set of features used includes returns, volatility, moving averages, relative strength index (RSI), exponential moving average (EMA), and average true range (ATR). These features are calculated for a given window size and are used to train the random forest classifier.
+
+The random forest classifier is an ensemble learning algorithm that combines multiple decision trees to improve the accuracy and stability of the predictions. It works by building a large number of decision trees, each of which is trained on a different random subset of the training data and a different random subset of the features. During prediction, the random forest classifier aggregates the predictions of all the decision trees to produce a final prediction.
+
+In the trading strategy code, the random forest classifier is implemented using the scikit-learn library. The classifier is first trained on the historical price data using the features described above, and the resulting model is used to predict the direction of the next day's price movement. The predicted direction is used to generate trading signals, which are used to calculate the profit and loss (P&L) of the trading strategy.
+
+It's worth noting that the choice of classifier and its hyperparameters can significantly impact the performance of the trading strategy. In this code, the hyperparameters of the random forest classifier (i.e., the number of trees and the maximum depth of each tree) are optimized using a genetic algorithm to find the combination that produces the highest fitness score. However, the effectiveness of this approach may depend on the specific trading problem and dataset. Therefore, it's important to carefully evaluate the performance of the classifier and experiment with different hyperparameters to find the optimal combination.
+
 ## Explanation of the Code
 
 ### Libraries
